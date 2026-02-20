@@ -38,3 +38,9 @@ IMPORTANT
 NOTE
 
 - Performance: Since this project utilizes a free-tier MongoDB instance hosted online, you might experience a slight delay in initial data fetching or database operations. This is due to the cold-start and resource limitations of the free hosting environment.
+
+## Project access
+
+Click the link below to access the project live
+
+https://ginger-media-group-assignment.vercel.app/
