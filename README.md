@@ -18,7 +18,7 @@ Install dependencies
 Setup Environment Variables
 
 ```bash
-  DATABASE_URL=your database url
+  DATABASE_URL=your mongodb database url
   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your clerk public publishable key
   CLERK_SECRET_KEY=your clerk secret key
   NODE_ENV=production
