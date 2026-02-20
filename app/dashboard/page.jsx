@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useUser, useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation"; 
+import { toast } from 'react-toastify';
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -68,7 +69,12 @@ export default function DashboardPage() {
                 setTitle("");
                 setUrl("");
                 fetchBookmarks();
+                toast.success("Bookmark added successfully!");
+            } else {
+                toast.error("Failed to add bookmark");
             }
+        } catch (error) {
+            toast.error("An error occurred while adding bookmark");
         } finally {
             setIsSubmitting(false);
         }
@@ -93,7 +99,12 @@ export default function DashboardPage() {
             if (res.ok) {
                 setEditOpen(false);
                 fetchBookmarks();
+                toast.success("Bookmark updated successfully!");
+            } else {
+                toast.error("Failed to update bookmark");
             }
+        } catch (error) {
+            toast.error("An error occurred while updating bookmark");
         } finally {
             setIsEditing(false);
         }
@@ -103,7 +114,14 @@ export default function DashboardPage() {
         setDeleteId(id);
         try {
             const res = await fetch(`/api/bookmarks/${id}`, { method: "DELETE" });
-            if (res.ok) fetchBookmarks();
+            if (res.ok) {
+                fetchBookmarks();
+                toast.success("Bookmark deleted successfully!");
+            } else {
+                toast.error("Failed to delete bookmark");
+            }
+        } catch (error) {
+            toast.error("An error occurred while deleting bookmark");
         } finally {
             setDeleteId(null);
         }
