@@ -93,7 +93,7 @@ export default function HomePage() {
               </SignUpButton>
             </SignedOut>
 
-            <Link href="https://github.com" target="_blank">
+            <Link href="https://github.com/ujjwal509kumar/Ginger-Media-Group-assignment" target="_blank">
               <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-md bg-background/50 backdrop-blur-sm transition-all hover:bg-muted border-border font-bold">
                 View Source Code
               </Button>
